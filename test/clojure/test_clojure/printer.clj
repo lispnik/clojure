@@ -85,7 +85,8 @@
 (deftest print-dup-expected
   (are [x s] (= s (binding [*print-dup* true] (print-str x)))
        1 "1"
-       1.0 "1.0"
+       1.0d "1.0"
+       1.0f "1.0f"
        1N "1N"
        (java.math.BigInteger. "1") "#=(java.math.BigInteger. \"1\")"
        1M "1M"
@@ -96,6 +97,7 @@
                 (= x (read-string (binding [*print-dup* true] (print-str x)))))
        1
        1.0
+       1.0f
        1N
        1M
        "hi"))

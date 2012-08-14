@@ -65,7 +65,7 @@ static Pattern intPat =
 		Pattern.compile(
 				"([-+]?)(?:(0)|([1-9][0-9]*)|0[xX]([0-9A-Fa-f]+)|0([0-7]+)|([1-9][0-9]?)[rR]([0-9A-Za-z]+)|0[0-9]+)(N)?");
 static Pattern ratioPat = Pattern.compile("([-+]?[0-9]+)/([0-9]+)");
-static Pattern floatPat = Pattern.compile("([-+]?[0-9]+(\\.[0-9]*)?([eE][-+]?[0-9]+)?)(M)?");
+static Pattern floatPat = Pattern.compile("([-+]?[0-9]+(\\.[0-9]*)?([eE][-+]?[0-9]+)?)(M|f|d)?");
 static final Symbol SLASH = Symbol.intern("/");
 static final Symbol CLOJURE_SLASH = Symbol.intern("clojure.core","/");
 //static Pattern accessorPat = Pattern.compile("\\.[a-zA-Z_]\\w*");
@@ -392,8 +392,15 @@ private static Object matchNumber(String s){
 	m = floatPat.matcher(s);
 	if(m.matches())
 		{
-		if(m.group(4) != null)
-			return new BigDecimal(m.group(1));
+		if(m.group(4) != null) 
+			{
+			if(m.group(4).equals("M"))
+				return new BigDecimal(m.group(1));
+			else if(m.group(4).equals("f"))
+				return Float.parseFloat(m.group(1));
+			else if(m.group(4).equals("d"))
+				return Double.parseDouble(m.group(1));
+			}
 		return Double.parseDouble(s);
 		}
 	m = ratioPat.matcher(s);

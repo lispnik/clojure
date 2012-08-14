@@ -299,6 +299,7 @@
 
 (defmethod print-dup java.lang.Character [c w] (print-method c w))
 (defmethod print-dup java.lang.Long [o w] (print-method o w))
+(defmethod print-dup java.lang.Float [o w] (print-method o w))
 (defmethod print-dup java.lang.Double [o w] (print-method o w))
 (defmethod print-dup clojure.lang.Ratio [o w] (print-method o w))
 (defmethod print-dup java.math.BigDecimal [o w] (print-method o w))
@@ -342,6 +343,10 @@
 (defmethod print-method clojure.lang.BigInt [b, ^Writer w]
   (.write w (str b))
   (.write w "N"))
+
+(defmethod print-method java.lang.Float [b, ^Writer w]
+  (.write w (str b))
+  (.write w "f"))
 
 (defmethod print-method java.util.regex.Pattern [p ^Writer w]
   (.write w "#\"")

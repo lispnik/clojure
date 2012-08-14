@@ -273,6 +273,128 @@
 
   (is (instance? BigDecimal -1.0M))
   (is (instance? BigDecimal -1.M))
+
+  ; Read float
+  (is (instance? Float 3.4028234663852886E38f))
+  (is (instance? Float 1.401298464324817E-45f))
+  (is (instance? Float 2147483647f))
+  (is (instance? Float +1f))
+  (is (instance? Float 1f))
+  (is (instance? Float +0f))
+  (is (instance? Float 0f))
+  (is (instance? Float -0f))
+  (is (instance? Float -1f))
+  (is (instance? Float -2147483648f))
+
+  (is (instance? Float +1.0e+1f))
+  (is (instance? Float +1.e+1f))
+  (is (instance? Float +1e+1f))
+
+  (is (instance? Float +1.0e1f))
+  (is (instance? Float +1.e1f))
+  (is (instance? Float +1e1f))
+
+  (is (instance? Float +1.0e-1f))
+  (is (instance? Float +1.e-1f))
+  (is (instance? Float +1e-1f))
+
+  (is (instance? Float 1.0e+1f))
+  (is (instance? Float 1.e+1f))
+  (is (instance? Float 1e+1f))
+
+  (is (instance? Float 1.0e1f))
+  (is (instance? Float 1.e1f))
+  (is (instance? Float 1e1f))
+
+  (is (instance? Float 1.0e-1f))
+  (is (instance? Float 1.e-1f))
+  (is (instance? Float 1e-1f))
+
+  (is (instance? Float -1.0e+1f))
+  (is (instance? Float -1.e+1f))
+  (is (instance? Float -1e+1f))
+
+  (is (instance? Float -1.0e1f))
+  (is (instance? Float -1.e1f))
+  (is (instance? Float -1e1f))
+
+  (is (instance? Float -1.0e-1f))
+  (is (instance? Float -1.e-1f))
+  (is (instance? Float -1e-1f))
+
+  (is (instance? Float +1.0f))
+  (is (instance? Float +1.f))
+
+  (is (instance? Float 1.0f))
+  (is (instance? Float 1.f))
+
+  (is (instance? Float +0.0f))
+  (is (instance? Float +0.f))
+
+  (is (instance? Float 0.0f))
+  (is (instance? Float 0.f))
+
+  (is (instance? Float -0.0f))
+  (is (instance? Float -0.f))
+
+  (is (instance? Float -1.0f))
+  (is (instance? Float -1.f))
+
+  ; Read double with explicit format
+
+  (is (instance? Double +1.0e+1d))
+  (is (instance? Double +1.e+1d))
+  (is (instance? Double +1e+1d))
+
+  (is (instance? Double +1.0e1d))
+  (is (instance? Double +1.e1d))
+  (is (instance? Double +1e1d))
+
+  (is (instance? Double +1.0e-1d))
+  (is (instance? Double +1.e-1d))
+  (is (instance? Double +1e-1d))
+
+  (is (instance? Double 1.0e+1d))
+  (is (instance? Double 1.e+1d))
+  (is (instance? Double 1e+1d))
+
+  (is (instance? Double 1.0e1d))
+  (is (instance? Double 1.e1d))
+  (is (instance? Double 1e1d))
+
+  (is (instance? Double 1.0e-1d))
+  (is (instance? Double 1.e-1d))
+  (is (instance? Double 1e-1d))
+
+  (is (instance? Double -1.0e+1d))
+  (is (instance? Double -1.e+1d))
+  (is (instance? Double -1e+1d))
+
+  (is (instance? Double -1.0e1d))
+  (is (instance? Double -1.e1d))
+  (is (instance? Double -1e1d))
+
+  (is (instance? Double -1.0e-1d))
+  (is (instance? Double -1.e-1d))
+  (is (instance? Double -1e-1d))
+
+  (is (instance? Double +1.0d))
+  (is (instance? Double +1.d))
+
+  (is (instance? Double 1.0d))
+  (is (instance? Double 1.d))
+
+  (is (instance? Double +0.0d))
+  (is (instance? Double +0.d))
+
+  (is (instance? Double 0.0d))
+  (is (instance? Double 0.d))
+
+  (is (instance? Double -0.0d))
+  (is (instance? Double -0.d))
+
+  (is (instance? Double -1.0d))
+  (is (instance? Double -1.d))
 )
 
 ;; Characters
